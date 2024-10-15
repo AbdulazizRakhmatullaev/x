@@ -107,16 +107,11 @@ a {
     flex-grow: 1;
 }
 
-.lnkicn {
+.lnk svg {
     color: #838383;
     fill: #838383;
     height: 24px;
     width: 24px;
-    transition: .2s;
-}
-
-.lnk:hover svg {
-    fill: #fff;
 }
 
 .actlnk svg {
