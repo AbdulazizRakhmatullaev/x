@@ -1,12 +1,10 @@
 :root {
-    --tg-theme-header-bg-color: #011627;
+    --tg-theme-header-bg-color: rgba(255, 255, 255, );
 }
 
 html {
     height: 100%;
     overflow: hidden;
-
-    /* 1st option */
     background: #000;
 }
 
@@ -14,7 +12,6 @@ body {
     z-index: 1;
     position: relative;
     height: 100%;
-    overflow-x: hidden !important;
     margin: 0;
     padding: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -62,27 +59,41 @@ a {
     height: 100%;
 }
 
-.pgs {
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
-    overflow-y: auto;
-    height: 100%;
-    padding: 95px 20px 20px;
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.main {
+    min-height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    overflow-y: scroll;
+    overscroll-behavior-y: none;
+}
+
+.mainCon {
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 65px 20px 80px;
 }
 
 .navbar {
+    position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
     width: 100%;
-    height: 100px;
-    padding: 20px 45px 35px;
-    background: rgba(0, 0, 0, 0.65);
-    backdrop-filter: blur(12px);
+    height: 65px;
+    padding-top: 12px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(13px);
     border-top: 1px solid rgb(47, 51, 54);
 }
 
 .navrow {
     display: flex;
-    gap: 100px;
     justify-content: center;
     margin: 0 auto;
     max-width: 600px;
@@ -96,37 +107,21 @@ a {
     flex-grow: 1;
 }
 
-.lnk div {
-    opacity: 0.6;
+.lnkicn {
+    color: #838383;
+    fill: #838383;
+    height: 24px;
+    width: 24px;
     transition: .2s;
 }
 
-.lnkicn {
-    margin-bottom: 4px;
-    height: 23px;
-    width: 23px;
+.lnk:hover svg {
+    fill: #fff;
 }
 
-.lnktxt {
+.actlnk svg {
     color: #fff;
-}
-
-.lnkicn svg {
-    height: 23px;
-    width: 23px;
-}
-
-.lnk:hover div {
-    opacity: 1;
-}
-
-.actlnk div {
-    opacity: 1;
-}
-
-.col {
-    width: 100%;
-    max-width: 600px;
+    fill: #fff;
 }
 
 .homcon {
@@ -175,19 +170,27 @@ a {
     font-weight: 400;
 }
 
-.user {
+.title {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 15px 20px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
-    gap: 15px;
-    z-index: 2;
-    background: rgba(0, 0, 0, 0.65);
-    backdrop-filter: blur(12px);
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(13px);
     border-bottom: 1px solid rgb(47, 51, 54);
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.tRow {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .pp {
@@ -286,12 +289,9 @@ a {
 }
 
 .spinner {
-    border: 5px solid #1d1d1f;
-    border-top: 5px solid #fff;
-    border-radius: 50%;
     width: 40px;
     height: 40px;
-    animation: spin 1s linear infinite;
+    animation: spin .7s linear infinite;
 }
 
 @keyframes spin {
@@ -302,25 +302,4 @@ a {
     100% {
         transform: rotate(360deg);
     }
-}
-
-.content {
-    opacity: 0;
-    transform: translateY(20px);
-    /* Optional: Adds a slide effect */
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-/* When the loading ends, this class gets added */
-.fade-in {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.cd {
-    height: 110px;
-    width: 110px;
-    object-fit: cover;
-    vertical-align: middle;
-    margin: 15px 0;
 }

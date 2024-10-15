@@ -1,9 +1,10 @@
-import Profile from "../components/profile";
 
 const Frens = () => {
     return (
-        <div className="col">
-            <Profile />
+        <>
+            <div className="title">
+              <div className="tRow">Frens</div>
+            </div>
             <div className="frHeader">
                 <div className="frte">Invite frens,<br />get more $CD</div>
                 <img src="imgs/cdnobg.png" className="cd"></img>
@@ -102,7 +103,7 @@ const Frens = () => {
                     <div className="frpts">+400 $CD</div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
