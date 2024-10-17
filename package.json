@@ -1,12 +1,12 @@
 {
-  "name": "cd-miniapp",
+  "name": "crkdzone",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://AbdulazizRakhmatullaev.github.io/x",
+  "homepage": "https://AbdulazizRakhmatullaev.github.io/crkdzone",
   "scripts": {
     "dev": "vite",
-    "deploy": "gh-pages -d dist -r https://github.com/AbdulazizRakhmatullaev/x.git",
+    "deploy": "gh-pages -d dist -r https://github.com/AbdulazizRakhmatullaev/crkdzone.git",
     "build": "tsc --noEmit && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
